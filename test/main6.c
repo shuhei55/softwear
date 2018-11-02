@@ -43,12 +43,18 @@ char check(int x)
 // func2: 自然数Nをn進法に変換して表示する関数
 void func2(int N, int n)
 {
+    char hex[100];
+    int cnt = 0;
     while (1) {
-        printf("%c", check((N % n)));
+        hex[cnt] = check(N % n);
         N = (N - (N % n)) / n;
         if (N == 0) {
             break;
         }
+        cnt++;
+    }
+    for (int i = 0; i <= cnt; i++) {
+        printf("%c", hex[cnt - i]);
     }
     printf("\n");
 }

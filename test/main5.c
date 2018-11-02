@@ -3,12 +3,18 @@
 // func1: 自然数Nを2進法に変換して表示する関数
 void func1(int N)
 {
+    int bin[100];
+    int cnt = 0;
     while (1) {
-        printf("%d", (N % 2));
+        bin[cnt] = N % 2;
         N /= 2;
         if (N == 0) {
             break;
         }
+        cnt++;
+    }
+    for (int i = 0; i <= cnt; i++) {
+        printf("%d", bin[cnt - i]);
     }
     printf("\n");
 }
